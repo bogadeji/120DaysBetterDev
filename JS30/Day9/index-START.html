@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+      console.log('Hello')
+    // Interpolated
+      console.log('Hello I am a %s string!', 'Variable')
+      //works similar to template strings in es6
+    // Styled
+      console.log('%c i am some great text',
+      'background: magenta')
+    // warning!
+      console.warn('See this')
+    // Error :|
+      console.error('Display an error in the console')
+    // Info
+      console.info('Interesting info')
+    // Testing
+      console.assert(2 === 3, 'Nope')
+      //Throws an assertion error, only when the logic is wrong
+    // clearing
+      // console.clear()\
+      // clears the console
+    // Viewing DOM Elements
+      // console.log(p)
+      // console.dir(p) //opens up the DOM element, and allows you see all the methods and attributes that live on the element
+    // Grouping together
+      dogs.forEach(dog =>{
+        console.groupCollapsed(`${dog.name}`)
+        console.log(`This is ${dog.name}`)
+        console.log(`${dog.name} is ${dog.age} years old`)
+        console.groupEnd(`${dog.name}`)
+      })
+    // counting
+        console.count('titi')
+        console.count('titi')
+        console.count('tope')
+    // timing
+      consoe.time()
+  </script>
+</body>
+</html>
